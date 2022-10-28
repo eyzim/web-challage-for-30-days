@@ -52,3 +52,19 @@ To build an App
     Nice, we would get this adorable words printed.
 
     ![colors_cute](/assets/readme/colors_console.png)
+
+8. Meanwhile, we have to restart nodejs we modify the source code, it's annoying.
+We can install [nodemon](https://www.npmjs.com/package/nodemon), a wonderful tool!
+
+    > nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected
+
+    ```
+    npm install -g nodemon
+    ```
+    `-g` for global install
+
+    Finally, we can run the terminal instead:
+
+    ```
+    nodemon index.js cute
+    ```
