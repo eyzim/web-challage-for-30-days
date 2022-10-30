@@ -1,0 +1,20 @@
+<%- include('../partials/head') %> 
+
+<body>
+    <div class="container">
+        <h1>Type your new comment here: </h1>
+        <form action="/comments" method="post">
+            <section>
+                <label for="username">Username: </label>
+                <input type="text" id="username" name="username" placeholder="my name">
+            </section>
+            <section>
+                <label for="comment">New comment: </label>
+                <textarea class="form-control" id="comment" name="comment" rows="5" placeholder="I want to say..."></textarea>
+            </section>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br>
+        <a class="btn btn-outline-danger" href="/comments">Maybe back to read the comments again</a>
+    </div>
+</body>

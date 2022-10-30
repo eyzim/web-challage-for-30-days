@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit comment of <%= comments.username %> </title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit your comment: </h1>
+        <form action="/comments/<%= comments.id %>?_method=PATCH" method="post">
+            <section>
+                <label for="username">Username: </label>
+                <input type="text" id="username" name="username" placeholder="<%= comments.username %> " disabled>
+            </section>
+            <section>
+                <label for="comment">Comment: </label>
+                <textarea class="form-control" id="comment" name="comment" rows="5"><%= comments.comment %></textarea>
+            </section>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        <br>
+        <a class="btn btn-outline-danger" href="/comments">Maybe back to read the comments again</a>
+    </div>
+</body>
+</html>

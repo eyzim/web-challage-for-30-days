@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment of <%= comments.username %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">Comments of ID: <%= comments.id %> </div>
+        <ul>
+            <%= comments.username %>: <%= comments.comment %> 
+            <br>
+            <form method="POST" action="/comments/<%= comments.id %>?_method=DELETE">
+                <button class="btn btn-outline-danger">Delete</button>
+            </form>
+            <a href="/comments/" class="btn btn-outline-info">Back to all</a>
+        </ul>
+    </div>
+</body>
+</html>

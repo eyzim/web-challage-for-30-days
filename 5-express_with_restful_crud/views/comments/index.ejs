@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All comments</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>Comments</h2>
+        </div>
+
+        <% for( let c of comments) { %>
+            <div class="card">
+                <div class="card-header">
+                    <a href="/comments/<%= c.id %>"><%= c.username %></a>
+                </div>
+                <div class="card-body">
+                    <%= c.comment %>
+                    <a href="/comments/<%= c.id %>/edit" class="btn btn-sm btn-outline-info">edit</a>
+                    <form method="POST" action="/comments/<%= c.id %>?_method=DELETE">
+                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+                    </form>
+                </div>
+            </div>
+            <br>
+        <% } %>
+
+        <a href="/comments/new" class="btn btn-primary">New comment</a>
+    </div>
+</body>
+</html>
