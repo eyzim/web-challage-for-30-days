@@ -1,0 +1,43 @@
+<!-- by indcluding header pre-defined in patials/head with bootstrap-->
+<%- include('partials/head') %> 
+
+<body>
+
+    <%- include('partials/navbar') %> 
+
+    <br>
+
+    <!--Grid row-->
+    <div class="row d-flex justify-content-center">
+        <!--Grid column-->
+        <div class="col-md-6 d-flex justify-content-center">
+            <p><%= description %> </p>
+        </div>
+        <!--Grid column-->
+    </div>
+    <!--Grid row-->
+
+    <br>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-start ">
+                <% for( let p of posts ) { %>
+                    <div class="card" style="width: 18rem;" >
+                        <% if (p.img) { %>
+                            <img src="<%= p.img %> " class="card-img-top" alt="">
+                        <% } %>
+                        <div class="card-body">
+                        <h5 class="card-title"><%= p.author %></h5>
+                        <p class="card-text"><%= p.title %></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <!-- <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li> -->
+                        </ul>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
