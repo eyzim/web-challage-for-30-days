@@ -4,7 +4,13 @@ const color = require('colors')
 const output = process.argv[2];
 const choose_color = process.argv[3];
 
-figlet(output, function(err, data) {
+figlet(output, 
+    {
+        // Happy Halloween!
+        font: 'Ghost',
+        whitespaceBreak: true
+    }, 
+    function(err, data) {
     if (err) {
         console.log('Something went wrong...');
         console.dir(err);
