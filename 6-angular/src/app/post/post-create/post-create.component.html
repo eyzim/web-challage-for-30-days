@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="enteredValue" class="text">
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="onAddContent()">Submit</button>
+</mat-card>
