@@ -1,13 +1,17 @@
 
 
-<mat-accordion>
-  <mat-expansion-panel>
+<mat-accordion multi="true" *ngIf="posts.length > 0">
+  <mat-expansion-panel *ngFor="let post of posts">
     <mat-expansion-panel-header>
-      This is the expansion title
+      {{ post.title }}
     </mat-expansion-panel-header>
-
     <ng-template matExpansionPanelContent>
-      Some deferred content
+      {{ post.content }}
     </ng-template>
+    <mat-action-row>
+      <button mat-stroked-button color="primary">Edit</button>
+      <button mat-stroked-button color="warn">Delete</button>
+    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
+<p class="mat-body-1 info-text" *ngIf="posts.length <= 0">Nothing yet.</p>

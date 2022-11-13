@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { PostService } from "../post.service";
 
 @Component({
   selector: 'app-post-create',
@@ -8,12 +10,26 @@ import { Component } from "@angular/core";
 
 export class PostCreateComponent{
 
-  enteredValue = 'Please input your Ip range';
-  newPost = 'nothing yet'
+  enteredTitle = "";
+  enteredConetent = "";
 
-  onAddContent(){
-    // alert(this.enteredValue)
-    this.newPost = this.enteredValue
+  requireTilte = ""
+  requireContent = ""
+
+  constructor(public postService: PostService) {}
+
+  onAddPost(form: NgForm){
+
+    if(form.invalid){
+      this.requireTilte = "Please enter your title.";
+      this.requireContent = "Please enter your content.";
+      return;
+    }
+
+    // send our post data
+    this.postService.addPost(form.value.title, form.value.content)
+
+    // reset the data posted
+    form.resetForm();
   }
-
 }
