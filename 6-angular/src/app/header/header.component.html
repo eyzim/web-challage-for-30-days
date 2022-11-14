@@ -1,1 +1,13 @@
-<mat-toolbar color="primary">Angular page here</mat-toolbar>
+<mat-toolbar color="primary">
+    <span 
+        routerLink="/">Angular at BMC.</span>
+    <div class="spacer"></div>
+    <ul>
+        <li>
+            <a 
+                mat-button
+                routerLink="/create"
+                routerLinkActive="mat-primary" >Create</a>
+        </li>
+    </ul>
+</mat-toolbar>
